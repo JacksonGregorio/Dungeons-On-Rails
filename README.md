@@ -1,24 +1,5 @@
-# README
+# DungeonsOnRails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<img src="https://www.bing.com/images/create/a-mage-from-dungeonsondragon-using-ruby-on-rails/1-65b0244fadc64d49a09b3466234b5d4f?id=DEbJF3Uc%2fvt1YkFkLlQsDA%3d%3d&view=detailv2&idpp=genimg&noidpclose=1&FORM=SYDBIC" alt="Imagem Game">
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
