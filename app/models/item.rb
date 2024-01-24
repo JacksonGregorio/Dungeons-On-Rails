@@ -3,10 +3,10 @@ class Item
   include Mongoid::Timestamps
   field :name, type: String
   field :type, type: String
-  field :description, type: String
+  field :description, type: String, optional: true
   field :value, type: Integer
-  field :demage, type: Integer
-  field :effect, type: String
+  field :demage, type: Integer, optional: true
+  field :effect, type: String, optional: true
   belongs_to :backpack
 
   def checktypeItem?
