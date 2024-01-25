@@ -7,4 +7,6 @@ class Spell
   field :demage, type: Integer, optional: true
   field :levelcast, type: Integer
   belongs_to :character
+
+  enum type: [:attack, :defense, :heal, :buff, :debuff]
 end
