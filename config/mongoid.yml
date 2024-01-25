@@ -1,17 +1,11 @@
 development:
   clients:
     default:
-      database: mongodbgame_development
-      hosts:
-        - localhost:27017
-      options:
-  options:
+      uri: mongodb+srv://devjackson:85201200j@dungeonsonrailsdb.5udtfmk.mongodb.net/mongodbgame_development?retryWrites=true&w=majority
 test:
   clients:
     default:
-      database: mongodbgame_test
-      hosts:
-        - localhost:27017
+      uri: mongodb+srv://devjackson:85201200j@dungeonsonrailsdb.5udtfmk.mongodb.net/mongodbgame_test?retryWrites=true&w=majority
       options:
         read:
           mode: :primary
