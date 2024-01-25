@@ -1,2 +1,36 @@
-<h1>Players#create</h1>
-<p>Find me in app/views/players/create.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game</title>
+</head>
+<body>
+    <h1>Welcome to the Game</h1>
+    
+    <%= form_with model: @player, url: players_path do |f| %>
+    <div class="field">
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :premium %>
+        <%= f.check_box :premium %>
+    </div>
+    
+    <div class="actions">
+        <%= f.submit "Create Player" %>
+    </div>
+<% end %>
+</body>
+</html>
+

@@ -13,6 +13,9 @@ gem "puma", ">= 5.0"
 
 gem 'mongoid'
 
+gem 'jquery-rails'
+
+gem 'bootstrap', '~> 5.1.3'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
