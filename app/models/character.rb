@@ -1,23 +1,22 @@
 class Character
   include Mongoid::Document
   include Mongoid::Timestamps
-  field :name, type: String, optional: false 
-  field :lifepoints , type: Integer, optional: false, default: 10
-  field :strength, type: Integer,  optional: false, default: 10
-  field :intelligence, type: Integer, optional: false, default: 10
-  field :dexterity, type: Integer, optional: false, default: 10
-  field :wisdom, type: Integer, optional: false, default: 10
-  field :constitution, type: Integer, optional: false, default: 10
-  field :charisma, type: Integer, optional: false, default: 10
-  field :level, type: Integer , optional: false, default: 1
-  field :armor_id, type: BSON::ObjectId , optional: true
-  field :weapon_id, type: BSON::ObjectId, optional: true
-  field :helmet_id, type: BSON::ObjectId, optional: true
-  field :shield_id, type: BSON::ObjectId, optional: true
-  field :boots_id, type: BSON::ObjectId, optional: true
-  field :gloves_id, type: BSON::ObjectId, optional: true
-  belongs_to :player, optional: false
-  has_one :backpack,
+  field :name_character, type: String
+  field :lifepoints , type: Integer, default: 10
+  field :strength, type: Integer,  default: 10
+  field :intelligence, type: Integer, default: 10
+  field :dexterity, type: Integer, default: 10
+  field :wisdom, type: Integer, default: 10
+  field :constitution, type: Integer, default: 10
+  field :charisma, type: Integer, default: 10
+  field :level, type: Integer , default: 1
+  field :armor_id, type: BSON::ObjectId 
+  field :weapon_id, type: BSON::ObjectId
+  field :helmet_id, type: BSON::ObjectId
+  field :shield_id, type: BSON::ObjectId
+  field :boots_id, type: BSON::ObjectId
+  field :gloves_id, type: BSON::ObjectId
+  belongs_to :player
+  has_one :backpack
   has_many :abilities
-  has_many :items, through: :backpack
 end

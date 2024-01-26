@@ -1,8 +1,11 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: [ :update, :destroy]
+  before_action :set_player, only: [ :update, :destroy, :show]
 
   def index
     @players = Player.all
+  end
+
+  def show
   end
 
   def new
