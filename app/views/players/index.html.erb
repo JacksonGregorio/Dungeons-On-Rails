@@ -16,8 +16,7 @@
         </p>
     </div>
 
-   <% allplayers = Player.all %>
-    <% allplayers.each do |player| %>
+    <% @players.each do |player| %>
         <div class="container my-3">
             <div class="card mb-3">
                 <div class="card-body">
@@ -28,6 +27,7 @@
             </div>
         </div>
     <% end %>
+    
 </body>
 </html>
 
