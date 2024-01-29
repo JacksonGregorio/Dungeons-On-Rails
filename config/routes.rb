@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root to: "players#index"
 
   #auth routes
-  get "/login", to: "authentication#login"
+  get "/login", to: "authentication#loginform"
 
   #player routes
   get "players/new", to: "players#new"

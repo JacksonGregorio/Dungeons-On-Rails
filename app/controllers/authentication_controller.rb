@@ -1,7 +1,5 @@
 class AuthenticationController < ApplicationController
 
-    before_action :authorize_request, except: :login
-
     def login
       if params[:email].nil?
         json_response(error: 'email is required' , status: :unauthorized)
