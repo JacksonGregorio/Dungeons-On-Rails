@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dungeons On Rails</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<%= form_for :player, url: "/auth/login" do |f| %>
+    <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+    </div>
+    
+    <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+    </div>
+    
+    <div class="actions">
+        <%= f.submit "Login" %>
+    </div>
+<% end %>
+</body>
+</html>
+

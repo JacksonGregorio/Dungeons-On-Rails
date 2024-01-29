@@ -1,11 +1,11 @@
 development:
   clients:
     default:
-      uri: mongodb+srv://devjackson:85201200j@dungeonsonrailsdb.5udtfmk.mongodb.net/mongodbgame_development?retryWrites=true&w=majority
+      uri: mongodb+srv://devjackson:@dungeonsonrailsdb.5udtfmk.mongodb.net/mongodbgame_development?retryWrites=true&w=majority
 test:
   clients:
     default:
-      uri: mongodb+srv://devjackson:85201200j@dungeonsonrailsdb.5udtfmk.mongodb.net/mongodbgame_test?retryWrites=true&w=majority
+      uri: mongodb+srv://devjackson:@dungeonsonrailsdb.5udtfmk.mongodb.net/mongodbgame_test?retryWrites=true&w=majority
       options:
         read:
           mode: :primary

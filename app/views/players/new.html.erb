@@ -1,2 +1,36 @@
-<h1>Players#new</h1>
-<p>Find me in app/views/players/new.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Player</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Create Player</h1>
+        
+        <%= form_with model: @player, url: '/player/create', html: { class: 'mt-4' } do |f| %>
+        <div class="form-group">
+            <%= f.label :username, class: 'form-label' %>
+            <%= f.text_field :username, class: 'form-control' %>
+        </div>
+        
+        <div class="form-group">
+            <%= f.label :email, class: 'form-label' %>
+            <%= f.email_field :email, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :password, class: 'form-label' %>
+            <%= f.password_field :password, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+            <%= f.label :premium, class: 'form-label' %>
+            <%= f.check_box :premium, class: 'form-check-input' %>
+        </div>
+        
+        <%= f.submit 'Submit', class: 'btn btn-primary mt-3' %>
+        <% end %>
+    </div>
+</body>
+</html>
