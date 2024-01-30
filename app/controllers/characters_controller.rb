@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [ :update, :destroy]
+  before_action :set_character, only: [ :update, :destroy, :show,:edit]
 
   def index
     @characters = Character.all
@@ -7,6 +7,12 @@ class CharactersController < ApplicationController
 
   def new
     @character = Character.new
+  end
+
+  def show
+  end
+  
+  def edit 
   end
 
   def create

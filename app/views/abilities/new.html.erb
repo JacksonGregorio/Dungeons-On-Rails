@@ -1,2 +1,41 @@
-<h1>Abilities#new</h1>
-<p>Find me in app/views/abilities/new.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Ability</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Create Ability</h1>
+        <%= form_for :ability, url: '/ability/create' do |f| %>
+    <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :type %>
+        <%= f.text_field :type, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_area :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :demage %>
+        <%= f.number_field :demage, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :character_id %>
+        <%= f.number_field :character_id, class: 'form-control' %>
+    </div>
+
+        <%= f.submit 'Create Ability', class: 'btn btn-primary' %>
+        <% end %>
+        </div>
+</body>
+</html>
+

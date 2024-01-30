@@ -1,2 +1,18 @@
-<h1>Backpacks#new</h1>
-<p>Find me in app/views/backpacks/new.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Backpack</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+    <h1 class="mt-5">Create Backpack</h1>
+    <%= form_for :backpack, url: 'backpack/create' do |f| %>
+    <div class="form-group">
+        <%= f.label :character_id %>
+        <%= f.number_field :character_id, class: 'form-control' %>
+    </div>
+  <%= f.submit 'Create Backpack', class: 'btn btn-primary' %>
+    <% end %>
+</body>
+</html>

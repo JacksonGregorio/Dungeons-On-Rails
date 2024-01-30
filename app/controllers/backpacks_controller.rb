@@ -1,8 +1,14 @@
 class BackpacksController < ApplicationController
-  before_action :set_backpack, only: [ :update, :destroy]
+  before_action :set_backpack, only: [ :update, :destroy, :show, :edit]
 
   def index
     @backpacks = Backpack.all
+  end
+
+  def show
+  end
+  
+  def edit 
   end
 
   def new

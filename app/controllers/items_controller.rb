@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [ :update, :destroy]
+  before_action :set_item, only: [ :update, :destroy, :show, :edit]
 
   def index
     @items = Item.all
@@ -7,6 +7,12 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+  end
+
+  def show
+  end
+
+  def edit 
   end
 
   def create
@@ -39,6 +45,6 @@ class ItemsController < ApplicationController
   end
 
   def item_params
-    params.require(:item).permit(:name, :item_type)
+    params.require(:item).permit(:name, :item_type, :description, :demage, :value, :effect, :backpack_id)
   end
 end

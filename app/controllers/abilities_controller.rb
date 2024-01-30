@@ -1,5 +1,5 @@
 class AbilitiesController < ApplicationController
-  before_action :set_ability, only: [ :update, :destroy]
+  before_action :set_ability, only: [ :update, :destroy, :show, :edit]
 
   def index
     @abilities = Ability.all
@@ -7,6 +7,12 @@ class AbilitiesController < ApplicationController
 
   def new
     @ability = Ability.new
+  end
+
+  def show
+  end
+
+  def edit 
   end
 
   def create

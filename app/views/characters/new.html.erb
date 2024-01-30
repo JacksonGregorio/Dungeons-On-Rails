@@ -1,2 +1,55 @@
-<h1>Characters#new</h1>
-<p>Find me in app/views/characters/new.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Character</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Create Character</h1>
+    <%= form_for :character, url: "/character/create" do |f| %>
+    <div class="form-group">
+        <%= f.label :strength %>
+        <%= f.number_field :strength, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :intelligence %>
+        <%= f.number_field :intelligence, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :dexterity %>
+        <%= f.number_field :dexterity, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :wisdom %>
+        <%= f.number_field :wisdom, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :charisma %>
+        <%= f.number_field :charisma, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :level %>
+        <%= f.number_field :level, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :player_id %>
+        <%= f.number_field :player_id, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+        <%= f.label :armor_id %>
+        <%= f.number_field :armor_id, class: 'form-control' %>
+    </div>
+
+    <%= f.submit 'Create Character', class: 'btn btn-primary' %>
+        <% end %>
+    </div>
+</body>
+</html>
