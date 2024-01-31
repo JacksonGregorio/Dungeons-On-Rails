@@ -1,2 +1,37 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dungeons On Rails</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Welcome to Items for Dungeons On Rails</h1>
+        
+        <p class="mt-4">
+            Dungeons On Rails is a role-playing game (RPG) where players embark on epic adventures in a fantasy world.
+            In an RPG, players assume the roles of characters and navigate through a story-driven narrative, making choices and engaging in battles along the way.
+            The game offers a rich and immersive experience, allowing players to customize their characters, explore vast landscapes, and interact with non-player characters (NPCs).
+            Whether you're a seasoned RPG player or new to the genre, Dungeons On Rails offers endless possibilities for adventure and excitement.
+        </p>
+    </div>
+
+<div class="container">
+    <h2 class="mt-5">All Items In This Game</h2>
+    <% @items.each do |items| %>
+        <div class="container my-3">
+            <div class="card mb-3 w-50">
+                <div class="card-body">
+                    <h5 class="card-title"><%= item.name %></h5>
+                    <p class="card-text"><%= item.item_type %></p>
+                    <p class="card-text"><%= item.description %></p>
+                    <p class="card-text"><%= item.demage %></p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
+    
+</body>
+</html>
+
