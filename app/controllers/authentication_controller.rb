@@ -10,15 +10,14 @@ class AuthenticationController < ApplicationController
           puts @player, 'player'
           token = JsonWebToken.encode(player_id: @player.id)
           time = Time.now + 24.hours.to_i
-          response.headers['Authorization'] = "Bearer #{token}"
-          puts token, 'token'
-          render json:{ token: token, exp: time.strftime("%m-%d-%Y %H:%M"),
-                         playername: @player.username, premium: @player.premium}, status: :ok
+          @token = "Bearer #{token}"
+          response.headers['Authorization'] = @token
+          session[:Authorization] = @token
           puts response.headers['Authorization'], 'response'
           redirect_to "/characters/new"
           else
             json_response(error: 'Invalid email or password', status: :unauthorized)
-            
+            format.turbo_stream { render :form }
           end
       end
     end

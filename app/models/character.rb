@@ -18,5 +18,4 @@ class Character
   field :gloves_id, type: BSON::ObjectId
   belongs_to :player
   has_one :backpack
-  has_many :abilities
 end

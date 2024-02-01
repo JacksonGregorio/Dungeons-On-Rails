@@ -11,6 +11,10 @@ gem "sprockets-rails"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
+gem 'rack-cors'
+
+gem 'rest-client'
+
 gem 'mongoid'
 
 # Use Json Web Token (JWT) for token based authentication

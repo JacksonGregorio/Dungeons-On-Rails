@@ -8,7 +8,7 @@
   <div class="container">
     <div class="text-center mb-4 container">
         <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-  <%= form_for :login, url: "/auth/login", id: "login_form" do |f| %>
+  <%= form_with url: "/auth/login", id: "login_form" do |f| %>
     <div class="form-label-group">
       <%= f.label :email, class: 'sr-only'%>
       <%= f.email_field :email, class: 'form-control', placeholder: 'Email address', required: true, autofocus: true %>

@@ -1,5 +1,6 @@
 class CharactersController < ApplicationController
   before_action :set_character, only: [ :update, :destroy, :show,:edit]
+  before_action :authorize_request, only: [:create, :update, :destroy, :show, :edit]
 
   def index
     @characters = Character.all
@@ -16,7 +17,9 @@ class CharactersController < ApplicationController
   end
 
   def create
+    puts @current_player, 'current_player'
     @character = Character.new(character_params)
+    @character.player = @current_player
 
     if @character.save
       redirect_to @character, notice: 'Character was successfully created.'
@@ -45,6 +48,6 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:strength, :intelligence, :dexterity, :wisdom, :charisma, :level, :player_id, :armor_id)
+    params.require(:character).permit(:strength, :intelligence, :dexterity, :wisdom, :charisma, :level, :name_character)
   end
 end
