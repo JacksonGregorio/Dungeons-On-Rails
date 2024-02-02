@@ -14,6 +14,7 @@ class AuthenticationController < ApplicationController
           response.headers['Authorization'] = @token
           session[:Authorization] = @token
           puts response.headers['Authorization'], 'response'
+          cookies[:Authorization] = @token
           redirect_to "/characters/new"
           else
             json_response(error: 'Invalid email or password', status: :unauthorized)

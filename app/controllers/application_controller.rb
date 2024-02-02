@@ -9,8 +9,8 @@ class ApplicationController < ActionController::Base
     
       def authorize_request
         token = session[:Authorization]
-        response = RestClient.get('http://127.0.0.1:3000/', {Authorization: token})
-        header = request.headers['Authorization']
+        header = cookies[:Authorization]
+        puts header, 'header'
         if header
           header_parts = header.split(' ')
           if header_parts.length == 2 && header_parts[0] == 'Bearer'
@@ -20,15 +20,18 @@ class ApplicationController < ActionController::Base
               @decoded = JsonWebToken.decode(token)
               puts @decoded, 'decoded'
               if @decoded
-                decode_id_user = @decoded[:user_id]
-                @current_user = User.find(decode_id_user)
+                 @current_user = @decoded
+                 puts @current_user, 'current_user'
               else
                 render json: {errors: 'Token is invalid'}, status: :unauthorized
+                puts 'Token is invalid'
               end
             rescue ActiveRecord::RecordNotFound => e
               render json: { errors: e.message }, status: :unauthorized
+              puts e.message
             rescue JWT::DecodeError => e
               render json: { errors: e.message }, status: :unauthorized
+              puts e.message
             end
           else
             render json: { errors: 'Invalid Authorization header format. Expected "Bearer token"' }, status: :unauthorized

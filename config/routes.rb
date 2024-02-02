@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   delete "player/:id", to: "players#destroy"
 
   #character routes
+  get "characters/index", to: "characters#index"
   get "characters/new", to: "characters#new"
   post "character/create", to: "characters#create"
   post "character/update", to: "characters#update"
