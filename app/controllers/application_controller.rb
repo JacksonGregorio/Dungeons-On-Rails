@@ -22,6 +22,8 @@ class ApplicationController < ActionController::Base
               if @decoded
                  @current_user = @decoded
                  puts @current_user, 'current_user'
+                 @current_player_id = @current_user['player_id']['$oid']
+                 puts @current_player_id, 'current_player_id'
               else
                 render json: {errors: 'Token is invalid'}, status: :unauthorized
                 puts 'Token is invalid'
