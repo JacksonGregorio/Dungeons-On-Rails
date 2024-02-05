@@ -1,6 +1,12 @@
 class CharactersController < ApplicationController
   before_action :set_character, only: [ :update, :destroy, :show,:edit]
-  before_action :authorize_request, only: [:create, :update, :destroy, :show, :edit]
+  before_action :authorize_request, only: [:create, :update, :destroy, :show, :edit, filter_characters_by_player:]
+
+  def edit 
+  end
+  
+  def show
+  end
 
   def index
     @characters = Character.all
@@ -10,10 +16,12 @@ class CharactersController < ApplicationController
     @character = Character.new
   end
 
-  def show
-  end
-  
-  def edit 
+  def filter_characters_by_player
+    player_id = @current_user['player_id']['$oid']
+    puts player_id, 'current_player'
+    filter_by_name if params[:name].present?
+    filter_by_level if params[:level].present?
+    json_response(@characters)
   end
 
   def create
@@ -44,6 +52,14 @@ class CharactersController < ApplicationController
   end
 
   private
+
+  def filter_by_name
+    @characters = Character.where(name: params[:name], player_id: player_id)
+  end
+
+  def filter_by_level
+    @characters = Character.where(level: params[:level], player_id: player_id)
+  end
 
   def set_character
     @character = Character.find(params[:id])
