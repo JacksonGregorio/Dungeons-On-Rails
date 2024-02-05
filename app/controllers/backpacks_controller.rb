@@ -1,14 +1,15 @@
 class BackpacksController < ApplicationController
   before_action :set_backpack, only: [ :update, :destroy, :show, :edit]
-
-  def index
-    @backpacks = Backpack.all
-  end
+  before_action :authorize_request, only: [:create, :update, :destroy, :show, :edit]
 
   def show
   end
   
   def edit 
+  end
+
+  def index
+    @backpacks = Backpack.all
   end
 
   def new

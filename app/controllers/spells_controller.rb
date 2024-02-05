@@ -1,5 +1,6 @@
 class SpellsController < ApplicationController
   before_action :set_spell, only: [:update, :destroy, :show, :edit]
+  before_action :authorize_request, only: [:create, :update, :destroy, :show, :edit]
 
   def index
     @spells = Spell.all

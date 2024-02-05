@@ -1,5 +1,5 @@
 class CharactersController < ApplicationController
-  before_action :set_character, only: [ :update, :destroy, :show,:edit]
+  before_action :set_character, only: [:update, :destroy, :show,:edit]
   before_action :authorize_request, only: [:create, :update, :destroy, :show, :edit, filter_characters_by_player:]
 
   def edit 
