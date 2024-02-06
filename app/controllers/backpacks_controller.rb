@@ -20,7 +20,7 @@ class BackpacksController < ApplicationController
     @backpack = Backpack.new(backpack_params)
 
     if @backpack.save
-      redirect_to @backpack, notice: 'Backpack was successfully created.'
+      redirect_to "/backpacks/index", notice: 'Backpack was successfully created.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class BackpacksController < ApplicationController
 
   def update
     if @backpack.update(backpack_params)
-      redirect_to @backpack, notice: 'Backpack was successfully updated.'
+      redirect_to "/backpacks/index", notice: 'Backpack was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class BackpacksController < ApplicationController
 
   def destroy
     @backpack.destroy
-    redirect_to backpacks_url, notice: 'Backpack was successfully destroyed.'
+    redirect_to "/backpacks/index", notice: 'Backpack was successfully destroyed.'
   end
 
   private

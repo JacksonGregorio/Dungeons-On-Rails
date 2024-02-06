@@ -20,7 +20,7 @@ class SpellsController < ApplicationController
     @spell = Spell.new(spell_params)
 
     if @spell.save
-      redirect_to @spell, notice: 'Spell was successfully created.'
+      redirect_to "/spells/index" , notice: 'Spell was successfully created.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class SpellsController < ApplicationController
 
   def update
     if @spell.update(spell_params)
-      redirect_to @spell, notice: 'Spell was successfully updated.'
+      redirect_to "/spells/index", notice: 'Spell was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class SpellsController < ApplicationController
 
   def destroy
     @spell.destroy
-    redirect_to spells_url, notice: 'Spell was successfully destroyed.'
+    redirect_to "/spells/index", notice: 'Spell was successfully destroyed.'
   end
 
   private

@@ -20,7 +20,7 @@ class AbilitiesController < ApplicationController
     @ability = Ability.new(ability_params)
 
     if @ability.save
-      redirect_to @ability, notice: 'Ability was successfully created.'
+      redirect_to "/abilities/index", notice: 'Ability was successfully created.'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class AbilitiesController < ApplicationController
 
   def update
     if @ability.update(ability_params)
-      redirect_to @ability, notice: 'Ability was successfully updated.'
+      redirect_to "/abilities/index", notice: 'Ability was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class AbilitiesController < ApplicationController
 
   def destroy
     @ability.destroy
-    redirect_to abilities_url, notice: 'Ability was successfully destroyed.'
+    redirect_to "/abilities/index", notice: 'Ability was successfully destroyed.'
   end
 
   private

@@ -28,7 +28,7 @@ class PlayersController < ApplicationController
 
   def update
     if @player.update(player_params)
-      redirect_to @player, notice: 'Player was successfully updated.'
+      redirect_to "/characters/index", notice: 'Player was successfully updated.'
     else
       render :edit
     end
@@ -36,7 +36,7 @@ class PlayersController < ApplicationController
 
   def destroy
     @player.destroy
-    redirect_to players_url, notice: 'Player was successfully destroyed.'
+    redirect_to "/login", notice: 'Player was successfully destroyed.'
   end
 
   private

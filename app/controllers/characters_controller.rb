@@ -44,7 +44,7 @@ class CharactersController < ApplicationController
 
   def update
     if @character.update(character_params)
-      redirect_to @character, notice: 'Character was successfully updated.'
+      redirect_to "/characters/index", notice: 'Character was successfully updated.'
     else
       render :edit
     end
@@ -52,7 +52,7 @@ class CharactersController < ApplicationController
 
   def destroy
     @character.destroy
-    redirect_to characters_url, notice: 'Character was successfully destroyed.'
+    redirect_to "/characters/index", notice: 'Character was successfully destroyed.'
   end
 
   private
