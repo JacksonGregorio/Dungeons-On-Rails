@@ -15,7 +15,7 @@ class AuthenticationController < ApplicationController
           session[:Authorization] = @token
           puts response.headers['Authorization'], 'response'
           cookies[:Authorization] = @token
-          redirect_to "/characters/new"
+          redirect_to "/characters/index"
           else
             json_response(error: 'Invalid email or password', status: :unauthorized)
             format.turbo_stream { render :form }

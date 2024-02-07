@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "/login", to: "authentication#loginform"
 
   #player routes
+  get "players/index", to: "players#index"
   get "players/new", to: "players#new"
   post "player/create", to: "players#create"
   post "player/update", to: "players#update"
@@ -28,6 +29,7 @@ Rails.application.routes.draw do
   delete "character/:id", to: "characters#destroy"
 
   #backpack routes
+  get "backpacks/index", to: "backpacks#index"
   get "backpacks/new", to: "backpacks#new"
   post "backpack/create", to: "backpacks#create"
   post "backpack/update", to: "backpacks#update"
@@ -36,6 +38,7 @@ Rails.application.routes.draw do
   delete "backpack/:id", to: "backpacks#destroy"
 
   #ability routes
+  get "abilities/index", to: "abilities#index"
   get "abilities/new", to: "abilities#new"
   post "ability/create", to: "abilities#create"
   post "ability/update", to: "abilities#update"
