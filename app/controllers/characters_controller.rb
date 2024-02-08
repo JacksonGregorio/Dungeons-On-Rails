@@ -2,7 +2,7 @@ class CharactersController < ApplicationController
   before_action :set_character, only: [:update, :destroy, :show, :edit]
   before_action :authorize_request, except: [:show]
 
-  def edit 
+  def edit
   end
   
   def show

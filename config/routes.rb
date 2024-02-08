@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get "characters/index", to: "characters#index"
   get "characters/new", to: "characters#new"
   post "character/create", to: "characters#create"
-  post "character/update", to: "characters#update"
+  post "characters/edit/:id", to: "characters#update"
   get "character/:id", to: "characters#show"
   get "/characters/edit/:id", to: "characters#edit"
   get "character/filter", to: "characters#filter_characters_by_player"
