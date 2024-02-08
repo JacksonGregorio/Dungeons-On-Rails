@@ -27,6 +27,8 @@
                     <p class="card-text">Level: <%= character.level %></p>
                     <p class="card-text">LifePoints: <%= character.lifepoints %></p>
                     <%= button_to 'Delete', "/character/#{character.id}", method: :delete%>
+                    <%= button_to 'Jogar', "/character/#{character.id}", method: :get %>
+                    <%= link_to 'Edit',"/characters/edit/#{character.id}", method: :get %>
                 </div>
             </div>
             </div>

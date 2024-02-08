@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   post "character/create", to: "characters#create"
   post "character/update", to: "characters#update"
   get "character/:id", to: "characters#show"
-  get "character/:id/edit", to: "characters#edit"
+  get "/characters/edit/:id", to: "characters#edit"
   get "character/filter", to: "characters#filter_characters_by_player"
   delete "character/:id", to: "characters#destroy"
 
